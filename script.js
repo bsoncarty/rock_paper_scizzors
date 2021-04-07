@@ -45,7 +45,7 @@ function game() {
             }
 
         }
-        console.log('Your chose ' + userChoice);
+        console.log('You chose ' + userChoice);
         console.log('The computer chose ' + computerChoice);
         console.log(playRound(userChoice, computerChoice));
         console.log("Wins: " + wins + ", Losses: " + losses + ", Draws: " + draws);
@@ -68,6 +68,7 @@ let rock_div = document.getElementById('r');
 let paper_div = document.getElementById('p');
 let scissors_div = document.getElementById('s');
 
+
 rock_div.addEventListener('click', function () {
     userChoice = 'rock';
     game();
@@ -82,6 +83,7 @@ scissors_div.addEventListener('click', function () {
     userChoice = 'scissors';
     game();
 });
+
 
 
 
