@@ -1,13 +1,12 @@
+
+let count = 0;
+let wins = 0;
+let losses = 0;
+let draws = 0;
+
 function game() {
-    let count = 0;
-    let wins = 0;
-    let losses = 0;
-    let draws = 0;
-    
+
     while (count < 5) {
-
-
-        // let userChoice = prompt("Choose either Rock, Paper, or Scissors:")
 
         let computerChoice = computerPlay();
         function computerPlay() {
@@ -44,17 +43,45 @@ function game() {
                 draws += 1;
                 return "Draw"
             }
+
         }
-        console.log(userChoice);
-        console.log(computerChoice);
+        console.log('Your chose ' + userChoice);
+        console.log('The computer chose ' + computerChoice);
         console.log(playRound(userChoice, computerChoice));
         console.log("Wins: " + wins + ", Losses: " + losses + ", Draws: " + draws);
         count++;
+        break;
+    }
+    if (count == 5) {
+        if (wins > losses) {
+            console.log('You beat the computer!');
+        } else if (losses > wins) {
+            console.log('You lost to the computer');
+        } else if (draws > wins && draws > losses || wins == losses) {
+            console.log('You tied the computer this game');
+        }
     }
 }
 
 
+let rock_div = document.getElementById('r');
+let paper_div = document.getElementById('p');
+let scissors_div = document.getElementById('s');
 
-console.log(game());
+rock_div.addEventListener('click', function () {
+    userChoice = 'rock';
+    game();
+});
+
+paper_div.addEventListener('click', function () {
+    userChoice = 'paper';
+    game();
+});
+
+scissors_div.addEventListener('click', function () {
+    userChoice = 'scissors';
+    game();
+});
+
 
 
